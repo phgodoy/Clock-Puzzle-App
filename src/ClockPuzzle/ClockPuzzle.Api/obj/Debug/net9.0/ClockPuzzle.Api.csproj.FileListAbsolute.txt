@@ -1,0 +1,6 @@
+/home/pepe/Documents/Projects/ClockPuzzle/ClockPuzzle.Api/obj/Debug/net9.0/rpswa.dswa.cache.json
+/home/pepe/Documents/Projects/ClockPuzzle/ClockPuzzle.Api/obj/Debug/net9.0/ClockPuzzle.Api.GeneratedMSBuildEditorConfig.editorconfig
+/home/pepe/Documents/Projects/ClockPuzzle/ClockPuzzle.Api/obj/Debug/net9.0/ClockPuzzle.Api.AssemblyInfoInputs.cache
+/home/pepe/Documents/Projects/ClockPuzzle/ClockPuzzle.Api/obj/Debug/net9.0/ClockPuzzle.Api.AssemblyInfo.cs
+/home/pepe/Documents/Projects/ClockPuzzle/ClockPuzzle.Api/obj/Debug/net9.0/ClockPuzzle.Api.csprojcsproj.CoreCompileInputs.cache
+/home/pepe/Documents/Projects/ClockPuzzle/ClockPuzzle.Api/obj/Debug/net9.0/ClockPuzzle.Api.MvcApplicationPartsAssemblyInfo.cache
