@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clock Puzzle Solver - Design System
+   Inspired by Final Fantasy XIII-2 with cyberpunk/sci-fi aesthetics
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark sci-fi theme */
+    --background: 220 25% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 40% 96%;
+
+    /* Cyan/Teal primary - inspired by FF XIII-2 crystal aesthetic */
+    --primary: 185 80% 55%;
+    --primary-foreground: 220 25% 6%;
+
+    --secondary: 220 25% 15%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 210 20% 60%;
+
+    /* Accent - Electric blue */
+    --accent: 200 100% 60%;
+    --accent-foreground: 220 25% 6%;
+
+    /* Success green for solved state */
+    --success: 150 70% 50%;
+    --success-foreground: 220 25% 6%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 25% 20%;
+    --input: 220 25% 18%;
+    --ring: 185 80% 55%;
+
+    --radius: 0.75rem;
+
+    /* Clock cell states */
+    --clock-inactive: 220 25% 15%;
+    --clock-inactive-border: 220 20% 30%;
+    --clock-inactive-text: 210 20% 60%;
+
+    --clock-selectable: 185 80% 55%;
+    --clock-selectable-border: 185 80% 65%;
+    --clock-selectable-glow: 185 80% 55%;
+
+    --clock-current: 45 100% 60%;
+    --clock-current-border: 45 100% 70%;
+    --clock-current-glow: 45 100% 60%;
+
+    --clock-visited: 260 60% 50%;
+    --clock-visited-border: 260 60% 60%;
+    --clock-visited-text: 260 40% 80%;
+
+    --clock-final: 150 70% 50%;
+    --clock-final-border: 150 70% 65%;
+    --clock-final-glow: 150 70% 50%;
+
+    /* Gradients */
+    --gradient-dark: linear-gradient(135deg, hsl(220 25% 6%) 0%, hsl(230 30% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 12%) 0%, hsl(225 25% 8%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(185 80% 55%) 0%, hsl(200 100% 60%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(150 70% 50%) 0%, hsl(165 80% 55%) 100%);
+
+    /* Shadows */
+    --shadow-glow-primary: 0 0 20px hsl(185 80% 55% / 0.4);
+    --shadow-glow-current: 0 0 25px hsl(45 100% 60% / 0.5);
+    --shadow-glow-success: 0 0 30px hsl(150 70% 50% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-dark);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Header styling */
+  .puzzle-header {
+    background: hsl(220 25% 8% / 0.9);
+    border-color: hsl(var(--border));
+  }
+
+  .clock-icon {
+    background: linear-gradient(135deg, hsl(185 80% 55% / 0.2) 0%, hsl(200 100% 60% / 0.1) 100%);
+    border: 1px solid hsl(185 80% 55% / 0.3);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Puzzle container */
+  .puzzle-container {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: 
+      0 4px 30px hsl(0 0% 0% / 0.3),
+      inset 0 1px 0 hsl(220 25% 25% / 0.3);
+  }
+
+  /* Clock face */
+  .clock-face {
+    background: hsl(220 25% 12%);
+    border-color: hsl(var(--border));
+    box-shadow: 
+      inset 0 0 60px hsl(0 0% 0% / 0.4),
+      0 0 20px hsl(185 80% 55% / 0.1);
+  }
+
+  /* Clock node states */
+  .clock-node {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .node-inactive {
+    background: hsl(var(--clock-inactive));
+    border-color: hsl(var(--clock-inactive-border));
+    color: hsl(var(--clock-inactive-text));
+  }
+
+  .node-inactive:hover:not(:disabled) {
+    background: hsl(220 25% 20%);
+    border-color: hsl(185 80% 55% / 0.5);
+    box-shadow: 0 0 15px hsl(185 80% 55% / 0.2);
+  }
+
+  .node-selectable {
+    background: hsl(185 80% 55% / 0.15);
+    border-color: hsl(var(--clock-selectable-border));
+    color: hsl(var(--clock-selectable));
+    box-shadow: 
+      0 0 20px hsl(var(--clock-selectable-glow) / 0.3),
+      inset 0 0 10px hsl(var(--clock-selectable-glow) / 0.1);
+  }
+
+  .node-selectable:hover:not(:disabled) {
+    transform: scale(1.1);
+    box-shadow: 
+      0 0 30px hsl(var(--clock-selectable-glow) / 0.5),
+      inset 0 0 15px hsl(var(--clock-selectable-glow) / 0.2);
+  }
+
+  .node-current {
+    background: hsl(45 100% 60% / 0.2);
+    border-color: hsl(var(--clock-current-border));
+    color: hsl(var(--clock-current));
+    box-shadow: 
+      0 0 25px hsl(var(--clock-current-glow) / 0.5),
+      0 0 50px hsl(var(--clock-current-glow) / 0.2),
+      inset 0 0 15px hsl(var(--clock-current-glow) / 0.2);
+  }
+
+  .node-visited {
+    background: hsl(260 60% 50% / 0.2);
+    border-color: hsl(var(--clock-visited-border));
+    color: hsl(var(--clock-visited-text));
+    box-shadow: inset 0 0 10px hsl(260 60% 50% / 0.2);
+  }
+
+  .node-final {
+    background: hsl(150 70% 50% / 0.25);
+    border-color: hsl(var(--clock-final-border));
+    color: hsl(var(--clock-final));
+    box-shadow: 
+      0 0 30px hsl(var(--clock-final-glow) / 0.5),
+      0 0 60px hsl(var(--clock-final-glow) / 0.3),
+      inset 0 0 20px hsl(var(--clock-final-glow) / 0.2);
+  }
+
+  /* Panel cards */
+  .status-panel,
+  .instructions-card,
+  .legend-card,
+  .config-card {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 4px 20px hsl(0 0% 0% / 0.2);
+  }
+
+  /* Solve button */
+  .btn-solve {
+    background: var(--gradient-primary);
+    border: none;
+    box-shadow: var(--shadow-glow-primary);
+    transition: all 0.3s ease;
+  }
+
+  .btn-solve:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 0 30px hsl(185 80% 55% / 0.6);
+  }
+}
+
+@layer utilities {
+  /* Glow animations */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 
+        0 0 20px hsl(45 100% 60% / 0.4),
+        0 0 40px hsl(45 100% 60% / 0.2);
+    }
+    50% {
+      box-shadow: 
+        0 0 30px hsl(45 100% 60% / 0.6),
+        0 0 60px hsl(45 100% 60% / 0.3);
+    }
+  }
+
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 1.5s ease-in-out infinite;
+  }
+}
