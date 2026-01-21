@@ -1,11 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "nvLbupI3ouM=",
+  "dgSpecHash": "lRhgrBM3+ho=",
   "success": true,
   "projectFilePath": "/home/pepe/Documents/Projects/Clock-Puzzle-App/src/ClockPuzzle/ClockPuzzle.Api/ClockPuzzle.Api.csproj",
   "expectedPackageFiles": [
     "/home/pepe/.nuget/packages/microsoft.aspnetcore.openapi/10.0.0/microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
-    "/home/pepe/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512"
+    "/home/pepe/.nuget/packages/microsoft.extensions.apidescription.server/10.0.0/microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
+    "/home/pepe/.nuget/packages/microsoft.openapi/2.3.0/microsoft.openapi.2.3.0.nupkg.sha512",
+    "/home/pepe/.nuget/packages/swashbuckle.aspnetcore/10.1.0/swashbuckle.aspnetcore.10.1.0.nupkg.sha512",
+    "/home/pepe/.nuget/packages/swashbuckle.aspnetcore.swagger/10.1.0/swashbuckle.aspnetcore.swagger.10.1.0.nupkg.sha512",
+    "/home/pepe/.nuget/packages/swashbuckle.aspnetcore.swaggergen/10.1.0/swashbuckle.aspnetcore.swaggergen.10.1.0.nupkg.sha512",
+    "/home/pepe/.nuget/packages/swashbuckle.aspnetcore.swaggerui/10.1.0/swashbuckle.aspnetcore.swaggerui.10.1.0.nupkg.sha512"
   ],
   "logs": []
 }
