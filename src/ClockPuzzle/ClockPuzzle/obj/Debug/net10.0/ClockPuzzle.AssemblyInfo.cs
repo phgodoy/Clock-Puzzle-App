@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClockPuzzle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79aee23fffb3aaba86be502e0814535a8d44f9f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa243f6e0166a5292e88fbb47724b9a4cc0b12e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClockPuzzle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClockPuzzle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
