@@ -21,10 +21,10 @@ interface StatusPanelProps {
 
 function getStatusBadge(status: PuzzleState['status']) {
   const config = {
-    'idle': { label: 'Aguardando', variant: 'secondary' as const },
+    'idle': { label: 'Awaiting', variant: 'secondary' as const },
     'in-progress': { label: 'Em Progresso', variant: 'default' as const },
-    'solved': { label: 'Resolvido!', variant: 'success' as const },
-    'failed': { label: 'Sem Solução', variant: 'destructive' as const },
+    'solved': { label: 'Solved!', variant: 'success' as const },
+    'failed': { label: 'No Solved', variant: 'destructive' as const },
   };
   return config[status];
 }
@@ -135,7 +135,7 @@ export function StatusPanel({
           className="w-full btn-solve"
         >
           <Play className="w-4 h-4 mr-1" />
-          {isSolving ? 'Resolvendo...' : 'Automatic Solving'}
+          {isSolving ? 'Solving...' : 'Automatic Solving'}
         </Button>
       </CardContent>
     </Card>
