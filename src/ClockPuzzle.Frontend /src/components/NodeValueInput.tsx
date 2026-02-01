@@ -34,7 +34,7 @@ export function NodeValueInput({ values, onChange, onReset }: NodeValueInputProp
     <div className="node-input-container space-y-4">
       <div className="flex items-center justify-between gap-2">
         <span className="text-sm text-muted-foreground">
-          Values ({values.length} nós):
+          Values ({values.length} nodes):
         </span>
         <div className="flex gap-1">
           <Button
