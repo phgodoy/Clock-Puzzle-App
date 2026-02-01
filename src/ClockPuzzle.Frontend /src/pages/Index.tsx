@@ -43,7 +43,7 @@ const Index = () => {
       <main className="flex-1 container px-4 py-6 md:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 lg:gap-8">
           {/* Main puzzle area */}
-          <div className="flex flex-col items-center justify-center py-8">
+          <div className="flex flex-col items-center justify-start pt-0">
             <ClockPuzzle nodes={state.nodes} onNodeClick={handleNodeClick} />
             
             {state.status === 'idle' && (
