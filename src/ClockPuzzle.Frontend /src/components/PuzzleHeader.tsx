@@ -30,7 +30,7 @@ export function PuzzleHeader({ onLoadExample }: PuzzleHeaderProps) {
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="sm">
               <FolderOpen className="w-4 h-4 mr-2" />
-              Exemplos
+              Exemples
               <ChevronDown className="w-4 h-4 ml-1" />
             </Button>
           </DropdownMenuTrigger>
